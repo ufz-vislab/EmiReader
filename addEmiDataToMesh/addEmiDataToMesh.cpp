@@ -1,8 +1,8 @@
 /**
- * @file   removeMeshElements.cpp
+ * @file   addEmiDataToMesh.cpp
  * @author Karsten Rink
  * @date   2015/04/17
- * @brief
+ * @brief  Adds EMI Data as an additional scalar array to a mesh
  *
  * @copyright
  * Copyright (c) 2012-2015, OpenGeoSys Community (http://www.opengeosys.org)
@@ -118,7 +118,7 @@ int main (int argc, char* argv[])
 	BaseLib::LogogSimpleFormatter *custom_format (new BaseLib::LogogSimpleFormatter);
 	logog_cout->SetFormatter(*custom_format);
 
-	TCLAP::CmdLine cmd("Add a scalar cell array to a 2d mesh based on raster- or csv-file.", ' ', "0.1");
+	TCLAP::CmdLine cmd("Add EMI data as a scalar cell array to a 2d mesh.", ' ', "0.1");
 
 	// I/O params
 	TCLAP::ValueArg<std::string> mesh_out("o", "mesh-output-file",
@@ -131,7 +131,7 @@ int main (int argc, char* argv[])
 	cmd.add(mesh_in);
 
 	TCLAP::ValueArg<std::string> csv_in("", "csv",
-	                                    "csv-file containing information to be added as a scalar array.",
+	                                    "csv-file containing EMI data to be added as a scalar array.",
 	                                    true, "", "name of the csv input file");
 	cmd.add(csv_in);
 	cmd.parse(argc, argv);
