@@ -24,11 +24,9 @@
 
 // FileIO
 #include "FileIO/VtkIO/VtuInterface.h"
-#include "FileIO/AsciiRasterInterface.h"
 #include "FileIO/CsvInterface.h"
 
 // GeoLib
-#include "GeoLib/Raster.h"
 #include "GeoLib/Grid.h"
 #include "GeoLib/AnalyticalGeometry.h"
 
@@ -39,13 +37,6 @@
 #include "MeshLib/PropertyVector.h"
 #include "MeshLib/Elements/Element.h"
 #include "MeshLib/MeshEditing/projectMeshOntoPlane.h"
-
-// VTK
-#include <vtkDoubleArray.h>
-#include <vtkInformation.h>
-#include <vtkPointData.h>
-#include <vtkSmartPointer.h>
-#include <vtkUnstructuredGrid.h>
 
 std::vector<double> getDataFromCSV(MeshLib::Mesh const& mesh, std::vector<GeoLib::Point*> data_points)
 {
