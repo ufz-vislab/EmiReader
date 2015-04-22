@@ -1,12 +1,16 @@
 cmake_minimum_required(VERSION 2.8.12)
 project(emi-reader)
 
-set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++0x")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
+  ${CMAKE_SOURCE_DIR}/ogs/scripts/cmake/cmake
+  ${CMAKE_SOURCE_DIR}/ogs/scripts/cmake)
+include(CompilerSetup)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/ogs)
 
 include_directories(ogs)
 include_directories(ogs/ThirdParty)
+include_directories(${Boost_INCLUDE_DIRS})
 
 find_package(VTK 6.1 COMPONENTS vtkIOXML NO_MODULE QUIET)
 include( ${VTK_USE_FILE} )
