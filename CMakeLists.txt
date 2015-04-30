@@ -5,6 +5,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
   ${CMAKE_SOURCE_DIR}/ogs/scripts/cmake/cmake
   ${CMAKE_SOURCE_DIR}/ogs/scripts/cmake)
 include(CompilerSetup)
+include(ProjectSetup)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/ogs)
 
