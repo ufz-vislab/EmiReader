@@ -17,4 +17,5 @@ find_package(VTK 6.1 COMPONENTS vtkIOXML NO_MODULE QUIET)
 include( ${VTK_USE_FILE} )
 
 add_subdirectory(addEmiDataToMesh)
+add_subdirectory(addScalarArrayTimeSeries)
 add_subdirectory(ErtData2Mesh)
