@@ -4,7 +4,7 @@ target_link_libraries(addScalarArrayTimeSeries
 	BaseLib
 	FileIO
 	InSituLib
-	${CATALYST_LIBRARIES}
+	${VTK_LIBRARIES}
 )
-ADD_CATALYST_DEPENDENCY(addScalarArrayTimeSeries)
+ADD_VTK_DEPENDENCY(addScalarArrayTimeSeries)
 set_target_properties(addScalarArrayTimeSeries PROPERTIES FOLDER Utilities)

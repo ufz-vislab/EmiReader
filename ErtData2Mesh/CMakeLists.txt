@@ -4,7 +4,7 @@ target_link_libraries(ErtData2Mesh
 	BaseLib
 	FileIO
 	InSituLib
-	${CATALYST_LIBRARIES}
+	${VTK_LIBRARIES}
 )
-ADD_CATALYST_DEPENDENCY(ErtData2Mesh)
+ADD_VTK_DEPENDENCY(ErtData2Mesh)
 set_target_properties(ErtData2Mesh PROPERTIES FOLDER Utilities)

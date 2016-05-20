@@ -4,7 +4,7 @@ target_link_libraries(addEmiDataToMesh
 	BaseLib
 	FileIO
 	InSituLib
-	${CATALYST_LIBRARIES}
+	${VTK_LIBRARIES}
 )
-ADD_CATALYST_DEPENDENCY(addEmiDataToMesh)
+ADD_VTK_DEPENDENCY(addEmiDataToMesh)
 set_target_properties(addEmiDataToMesh PROPERTIES FOLDER Utilities)

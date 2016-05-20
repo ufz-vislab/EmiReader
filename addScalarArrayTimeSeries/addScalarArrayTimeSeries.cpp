@@ -25,9 +25,9 @@
 #include "BaseLib/FileTools.h"
 
 // FileIO
-#include "FileIO/VtkIO/VtuInterface.h"
+#include "MeshLib/IO/VtkIO/VtuInterface.h"
 #include "FileIO/CsvInterface.h"
-#include "FileIO/AsciiRasterInterface.h"
+#include "GeoLib/IO/AsciiRasterInterface.h"
 
 // GeoLib
 #include "GeoLib/Point.h"
@@ -164,7 +164,7 @@ int main (int argc, char* argv[])
 	MeshLib::Mesh* mesh = nullptr;
 	if (mesh_new.isSet())
 	{
-		mesh = FileIO::VtuInterface::readVTUFile(mesh_new.getValue());
+		mesh = MeshLib::IO::VtuInterface::readVTUFile(mesh_new.getValue());
 		if (mesh == nullptr)
 		{
 
@@ -190,7 +190,7 @@ int main (int argc, char* argv[])
 	{
 		if (!mesh_new.isSet())
 		{
-			mesh = FileIO::VtuInterface::readVTUFile(mesh_add.getValue() + number2str(file_counter) + ".vtu");
+			mesh = MeshLib::IO::VtuInterface::readVTUFile(mesh_add.getValue() + number2str(file_counter) + ".vtu");
 			if (mesh==nullptr)
 			{
 				ERR("No base mesh given and no mesh for time step %d found.", file_counter);
@@ -232,7 +232,7 @@ int main (int argc, char* argv[])
 			if (overwrite == false)
 				return -7;
 		}
-		FileIO::VtuInterface vtu(mesh);
+		MeshLib::IO::VtuInterface vtu(mesh);
 		vtu.writeToFile(output_name);
 		file_counter++;
 	

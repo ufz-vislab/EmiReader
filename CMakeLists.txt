@@ -9,13 +9,17 @@ include(ProjectSetup)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/ogs)
 
-include_directories(ogs)
-include_directories(ogs/ThirdParty)
-include_directories(${Boost_INCLUDE_DIRS})
-
-find_package(VTK 6.1 COMPONENTS vtkIOXML NO_MODULE QUIET)
-include( ${VTK_USE_FILE} )
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+include_directories(
+	${CMAKE_SOURCE_DIR}/ogs
+	${CMAKE_SOURCE_DIR}/ogs/ThirdParty
+	${CMAKE_SOURCE_DIR}/ogs/ThirdParty/tclap/include
+	${Boost_INCLUDE_DIRS}
+	${CONAN_INCLUDE_DIRS}
+)
 
 add_subdirectory(addEmiDataToMesh)
 add_subdirectory(addScalarArrayTimeSeries)
+#add_subdirectory(EmiData2PolyData)
 add_subdirectory(ErtData2Mesh)
+add_subdirectory(makeBuildings)

@@ -23,7 +23,7 @@
 #include "BaseLib/LogogSimpleFormatter.h"
 
 // FileIO
-#include "FileIO/VtkIO/VtuInterface.h"
+#include "MeshLib/IO/VtkIO/VtuInterface.h"
 #include "FileIO/CsvInterface.h"
 
 // GeoLib
@@ -137,7 +137,7 @@ int main (int argc, char* argv[])
 	cmd.parse(argc, argv);
 
 	INFO ("Reading mesh %s.", mesh_in.getValue().c_str());
-	MeshLib::Mesh* mesh (FileIO::VtuInterface::readVTUFile(mesh_in.getValue()));
+	MeshLib::Mesh* mesh (MeshLib::IO::VtuInterface::readVTUFile(mesh_in.getValue()));
 	if (mesh == nullptr)
 	{
 		ERR ("Error reading mesh file.");
@@ -180,7 +180,7 @@ int main (int argc, char* argv[])
 	std::copy(data.cbegin(), data.cend(), std::back_inserter(*v_vector));
 
 	INFO ("Writing result...");
-	FileIO::VtuInterface vtu(mesh);
+	MeshLib::IO::VtuInterface vtu(mesh);
 	vtu.writeToFile(mesh_out.getValue());
 
 	delete mesh;

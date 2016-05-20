@@ -19,10 +19,10 @@ if(QT4_FOUND)
 		MathLib
 		MeshLib
 		InSituLib
-		${CATALYST_LIBRARIES}
+		${VTK_LIBRARIES}
 		${QT_LIBRARIES}
 	)
-	ADD_CATALYST_DEPENDENCY(moveMeshNodes)
+	ADD_VTK_DEPENDENCY(moveMeshNodes)
 
 	set_target_properties(moveMeshNodes PROPERTIES FOLDER Utilities)
 	
@@ -34,7 +34,7 @@ if(QT4_FOUND)
 		InSituLib
 		MeshLib
 		MeshGeoToolsLib
-		${CATALYST_LIBRARIES}
+		${VTK_LIBRARIES}
 		${QT_LIBRARIES}
 	)
 	set_target_properties(EmiData2PolyData PROPERTIES FOLDER Utilities)
@@ -48,9 +48,9 @@ target_link_libraries(removeMeshElements
 	MathLib
 	MeshLib
 	InSituLib
-	${CATALYST_LIBRARIES}
+	${VTK_LIBRARIES}
 )
-ADD_CATALYST_DEPENDENCY(removeMeshElements)
+ADD_VTK_DEPENDENCY(removeMeshElements)
 set_target_properties(removeMeshElements PROPERTIES FOLDER Utilities)
 
 add_executable(DataExplorer5NodeReordering DataExplorer5NodeReordering.cpp)
@@ -58,9 +58,9 @@ target_link_libraries(DataExplorer5NodeReordering
 	FileIO
 	MeshLib
 	InSituLib
-	${CATALYST_LIBRARIES}
+	${VTK_LIBRARIES}
 )
-ADD_CATALYST_DEPENDENCY(DataExplorer5NodeReordering)
+ADD_VTK_DEPENDENCY(DataExplorer5NodeReordering)
 set_target_properties(DataExplorer5NodeReordering PROPERTIES FOLDER Utilities)
 
 add_executable(MoveMesh MoveMesh.cpp)
@@ -68,9 +68,9 @@ target_link_libraries(MoveMesh
 	FileIO
 	MeshLib
 	InSituLib
-	${CATALYST_LIBRARIES}
+	${VTK_LIBRARIES}
 )
-ADD_CATALYST_DEPENDENCY(MoveMesh)
+ADD_VTK_DEPENDENCY(MoveMesh)
 set_target_properties(MoveMesh PROPERTIES FOLDER Utilities)
 
 add_executable(appendLinesAlongPolyline appendLinesAlongPolyline.cpp)
@@ -81,9 +81,9 @@ target_link_libraries(appendLinesAlongPolyline
 	MeshLib
 	MeshGeoToolsLib
 	InSituLib
-	${CATALYST_LIBRARIES}
+	${VTK_LIBRARIES}
 )
-ADD_CATALYST_DEPENDENCY(appendLinesAlongPolyline)
+ADD_VTK_DEPENDENCY(appendLinesAlongPolyline)
 
 set_target_properties(appendLinesAlongPolyline
 	PROPERTIES FOLDER Utilities)
@@ -95,9 +95,9 @@ target_link_libraries(editMaterialID
 	MathLib
 	MeshLib
 	InSituLib
-	${CATALYST_LIBRARIES}
+	${VTK_LIBRARIES}
 )
-ADD_CATALYST_DEPENDENCY(editMaterialID)
+ADD_VTK_DEPENDENCY(editMaterialID)
 
 set_target_properties(editMaterialID
 	PROPERTIES FOLDER Utilities)
@@ -109,9 +109,9 @@ target_link_libraries(checkMesh
 	MathLib
 	MeshLib
 	InSituLib
-	${CATALYST_LIBRARIES}
+	${VTK_LIBRARIES}
 )
-ADD_CATALYST_DEPENDENCY(checkMesh)
+ADD_VTK_DEPENDENCY(checkMesh)
 
 set_target_properties(checkMesh PROPERTIES FOLDER Utilities)
 
@@ -122,9 +122,9 @@ target_link_libraries (reviseMesh
 	MathLib
 	MeshLib
 	InSituLib
-	${CATALYST_LIBRARIES}
+	${VTK_LIBRARIES}
 )
-ADD_CATALYST_DEPENDENCY(reviseMesh)
+ADD_VTK_DEPENDENCY(reviseMesh)
 set_target_properties(reviseMesh
 	PROPERTIES FOLDER Utilities)
 
@@ -134,7 +134,7 @@ target_link_libraries(ResetPropertiesInPolygonalRegion
 	FileIO
 	MeshLib
 	InSituLib
-	${CATALYST_LIBRARIES}
+	${VTK_LIBRARIES}
 )
 
 set_target_properties(ResetPropertiesInPolygonalRegion

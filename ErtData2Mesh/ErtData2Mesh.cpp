@@ -24,9 +24,9 @@
 #include "BaseLib/LogogSimpleFormatter.h"
 
 // FileIO
-#include "FileIO/VtkIO/VtuInterface.h"
+#include "MeshLib/IO/VtkIO/VtuInterface.h"
 #include "FileIO/CsvInterface.h"
-#include "FileIO/AsciiRasterInterface.h"
+#include "GeoLib/IO/AsciiRasterInterface.h"
 
 // GeoLib
 #include "GeoLib/Point.h"
@@ -122,7 +122,7 @@ int main (int argc, char* argv[])
 	std::vector<double> elevation_correction (nodes.size(), 0.0);
 	if (dem_in.isSet())
 	{
-		GeoLib::Raster* dem = FileIO::AsciiRasterInterface::readRaster(dem_in.getValue());
+		GeoLib::Raster* dem = GeoLib::IO::AsciiRasterInterface::readRaster(dem_in.getValue());
 		elevation_correction = getElevationCorrectionValues(*dem, nodes);
 		delete dem;
 	}
@@ -176,7 +176,7 @@ int main (int argc, char* argv[])
 	*/
 	
 	INFO ("Writing result...");
-	FileIO::VtuInterface vtu(&mesh);
+	MeshLib::IO::VtuInterface vtu(&mesh);
 	vtu.writeToFile(mesh_out.getValue());
 
 	//delete mesh;
