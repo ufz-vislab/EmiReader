@@ -7,6 +7,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
 include(CompilerSetup)
 include(ProjectSetup)
 
+find_package( Qt4 )
 add_subdirectory(${CMAKE_SOURCE_DIR}/ogs)
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
@@ -22,4 +23,6 @@ add_subdirectory(addEmiDataToMesh)
 add_subdirectory(addScalarArrayTimeSeries)
 #add_subdirectory(EmiData2PolyData)
 add_subdirectory(ErtData2Mesh)
-add_subdirectory(makeBuildings)
+if (QT4_FOUND)
+	add_subdirectory(makeBuildings)
+endif()
