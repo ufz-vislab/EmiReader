@@ -34,13 +34,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
 
-# find_package(Qt4)
-
-# include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake) include_directories(
-# ${CMAKE_SOURCE_DIR}/ogs ${CMAKE_SOURCE_DIR}/ogs/ThirdParty
-# ${CMAKE_SOURCE_DIR}/ogs/ThirdParty/tclap/include ${Boost_INCLUDE_DIRS}
-# ${CONAN_INCLUDE_DIRS} )
-
 add_subdirectory(addEmiDataToMesh)
 add_subdirectory(addScalarArrayTimeSeries)
 add_subdirectory(EmiData2PolyData)
