@@ -30,6 +30,10 @@ if(ogs_ADDED)
     target_include_directories(ogs_include SYSTEM INTERFACE ${ogs_SOURCE_DIR}/)
 endif()
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_BINDIR})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+
 # find_package(Qt4)
 
 # include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake) include_directories(
